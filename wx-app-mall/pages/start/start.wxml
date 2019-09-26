@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="swiper-container">
+    <!-- 轮播图 -->
+    <swiper bindchange="swiperchange">
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image src="{{item.picUrl}}"/>
+      </swiper-item>
+    </swiper>
+    <!-- 焦点图在最后一屏不显示 -->
+    <view class="dots" wx:if="{{swiperCurrent+1<swiperMaxNumber}}">
+      <view 
+        wx:for="{{banners}}" 
+        wx:key="id"
+        class="dot {{index==swiperCurrent?'active':''}}"
+      ></view>
+    </view>
+    <!-- 进入店铺按钮 -->
+    <view class="goToShop" wx:if="{{swiperCurrent+1==swiperMaxNumber}}">
+      <form bindsubmit="goToIndex" report-submit="true">
+        <button 
+          type="primary"
+          size="mini"
+          form-type="submit" 
+          class="weui-btn mini-btn"
+        >进入店铺</button>
+      </form>
+    </view>
+  </view>
+</view>

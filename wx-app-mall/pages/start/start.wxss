@@ -1,0 +1,49 @@
+/* pages/start/start.wxss */
+.container{
+  height: 100vh;
+}
+.swiper-container{
+  width: 100vw;
+  height: 100vh;
+}
+.swiper-container swiper{
+  width: 100vw;
+  height: 100vh;
+}
+.swiper-container swiper image{
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  overflow: hidden;
+}
+.swiper-container .dots{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+.swiper-container .dots .dot{
+  width: 20rpx;
+  height: 20rpx;
+  background: #000;
+  border-radius: 50%;
+  transition: all .6s;
+  opacity: .4;
+  margin: 0 8rpx;
+}
+.swiper-container .dots .dot.active{  
+  width: 20rpx;  
+  background: #07c160;
+  opacity: 1;
+}
+
+.goToShop{
+  width: 100%;
+  position: absolute;
+  bottom: 50rpx;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
