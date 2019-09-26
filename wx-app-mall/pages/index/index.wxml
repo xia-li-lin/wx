@@ -31,6 +31,125 @@
         </view>
     </view>
 
-    <!-- 公共列表 -->
+    <!-- Banner -->
+    <view class="banners" wx:if="{{banners}}">
+      <swiper
+        class="banners-box"
+        autoplay="true"
+        indicator-dots="true"
+        indicator-color="rgba(255,255,255,.4)"
+        indicator-active-color="rgba(255,255,255,1)"
+        circular="true"
+      >
+        <swiper-item wx:for="{{banners}}">
+          <image src="{{item.picUrl}}"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <!-- 公告列表 -->
+    <view class="notice" wx:if="{{noticeList}}">
+      <image src="../../assets/images/notice.png"></image>
+      <swiper
+        vertical="true"
+        autoplay="true"
+        circular="true"
+        interval="3000"
+      >
+        <navigator
+          wx:for-items="{{noticeList.dataList}}"
+          wx:key="*this"
+          url="/pages/notice/notice?id={{item.id}}"
+          open-type="navigate"
+        >
+          <swiper-item>
+            <view class="item">{{item.title}}</view>
+          </swiper-item>
+        </navigator>
+      </swiper>
+    </view>
+
+    <!-- 分类 -->
+    <scroll-view scroll-x>
+      <view class="categories">
+        <view class="item" wx:for="{{categories}}" wx:key="*this">
+          <view 
+            class="{{categoryActive==item.id?'active':''}}"
+            bindtap="handleCategoryClick"
+            id="{{item.id}}"
+          >
+            <image src="{{item.icon}}"></image>
+            <view>{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 爆品推荐 -->
+    <view class="page_bd" wx:if="{{goodsRecommed.length>0}}">
+      <view class="weui-loadmore weui-loadmore_line">
+          <view class="weui-loadmore__tips weui-loadmore__tips_in-line">爆款推荐</view>
+      </view>
+    </view>
+    <view class="goods-recommend" wx:if="{{goodsRecommed.length>0}}">
+      <view 
+        class="item"
+        wx:for-items="{{goodsRecommed}}"
+        wx:key="*this"
+        bindtap="handleGoodDetailClick"
+        data-id="{{item.id}}"
+      >
+        <view class="image">
+          <image src="{{item.pic}}" mode="aspectFill" lazy-load="true"></image>
+        </view>
+        <view class="title">{{item.name}}</view>
+        <view class="price">
+          <view>￥{{item.minPrice}}</view>
+          <view>￥{{item.originalPrice}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 全民拼团 -->
+    <block wx:if="goodsPintuan.length>0">
+      <view class="page_bd">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">全民拼团</view>
+        </view>
+      </view>
+      <view class="pingtuan">
+        <view 
+          class="item"
+          wx:for-items="{{goodsPintuan}}"
+          wx:key="*this"
+        >
+          <view class="image">
+            <image src="{{item.pic}}" mode="aspectFill" lazy-load='{{true}}'></image>
+          </view>
+          <view class="title">{{item.name}}</view>
+          <view class="profile">{{item.characteristic}}</view>
+          <view class="badge" wx:if="{{item.tags}}">{{item.tags}}</view>
+          <view class="bottom">
+            <view class="price">
+              <text>￥{{item.pingtuanPrice}}</text>
+              <text>￥{{item.originalPrice}}</text>
+            </view>
+            <view class="button">
+              <button type="warn" size="mini" data-id="{{item.id}}" bindtap="handleGoodDetailClick">拼团</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 商品列表 -->
+    <block>
+      <view class="page_bd">
+        <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">商品列表</view>
+        </view>
+      </view>
+      
+    </block>
 
 </view>

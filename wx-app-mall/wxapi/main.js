@@ -62,6 +62,14 @@ module.exports = {
   // 获取公告列表
   getNotice:(data)=>{
     return request('/notice/list',true,'post',data)
+  },
+  // 商城模块---商品类别
+  getGoodsCategory:(data)=>{
+    return request('/shop/goods/category/all',true,'get',data)
+  },
+  // 获取商品列表
+  getGoodsList:(data)=>{
+    return request('/shop/goods/list',true,'post',data)
   }
 }
 

@@ -3,4 +3,146 @@
   background: #fff;
   min-height: 100%;
   display: block;
+  font-size: 24rpx;
+}
+.notice{
+  width: 750rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 10rpx;
+  border-bottom: 1rpx solid #efeff4;
+  align-items: center;
+}
+.notice image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+.notice swiper{
+  width: 670rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #e64340;
+}
+.categories{
+  clear: both;
+}
+.categories .item{
+  width: 150rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+}
+.categories .item image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.banners{
+  width: 100vw;
+  position: relative;
+}
+.banners-box{
+  width: 100vw;
+  height: 250rpx;
+}
+.banners image{
+  width: 100vw;
+  height: 250rpx;
+}
+.goods-recommend{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  padding: 24rpx;
+  background: #f2f2f2;
+}
+.goods-recommend .item{
+  width: 340rpx;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: content-box;
+  margin-bottom: 24rpx;
+  border-radius: 5px;
+}
+.goods-recommend .item image{
+  width: 340rpx;
+  height: 340rpx;
+  overflow: hidden;
+}
+.goods-recommend .item .title{
+  width: 280rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-top: 24rpx;
+  color: #000;
+  margin-left: 24rpx;
+}
+.goods-recommend .item .price{
+  padding: 24rpx;
+  overflow: hidden;
+}
+.goods-recommend .item .price view:nth-of-type(1){
+  float: left;
+  color:#e64340;
+}
+.goods-recommend .item .price view:nth-of-type(2){
+  float: right;
+  text-decoration: line-through;
+  color: #aaa;
+}
+.pingtuan{
+  width: 100vw;
+  background: #f2f2f2;
+  padding-top:10rpx; 
+  overflow: hidden;
+}
+.pingtuan .item{
+  width: 720rpx;
+  margin: 20rpx auto;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.pingtuan .item .image{
+  width: 720rpx;
+  height: 250rpx;
+  overflow: hidden;
+}
+.pingtuan .item .image image{
+  width: 720rpx;
+}
+.pingtuan .item .title{
+  padding: 20rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+}
+.pingtuan .item .profile{
+  padding: 0 20rpx 20rpx 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.pingtuan .item .bottom{
+  padding: 0 20rpx;
+}
+.pingtuan .item .price{
+  float: left;
+}
+.pingtuan .item .price text:nth-of-type(1){
+  font-size:36rpx;
+  color:#e64340;
+}
+.pingtuan .item .price text:nth-of-type(2){
+  margin-left: 20rpx;
+  font-size:26rpx;
+  color:#999;
+  text-decoration:line-through;
+}
+.pingtuan .item .button{
+  float: right;
 }
