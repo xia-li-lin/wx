@@ -25,7 +25,7 @@
   width: 670rpx;
   height: 80rpx;
   line-height: 80rpx;
-  color: #e64340;
+  color: #e93b3d;
 }
 .categories{
   clear: both;
@@ -42,8 +42,8 @@
   height: 60rpx;
 }
 .categories .item .active{
-  color: #e64340;
-  border-bottom: 1px solid #e64340;
+  color: #e93b3d;
+  border-bottom: 1px solid #e93b3d;
 }
 .banners{
   width: 100vw;
@@ -93,7 +93,7 @@
 }
 .goods .item .price view:nth-of-type(1){
   float: left;
-  color:#e64340;
+  color:#e93b3d;
 }
 .goods .item .price view:nth-of-type(2){
   float: right;
@@ -139,7 +139,7 @@
 }
 .pingtuan .item .price text:nth-of-type(1){
   font-size:36rpx;
-  color:#e64340;
+  color:#e93b3d;
 }
 .pingtuan .item .price text:nth-of-type(2){
   margin-left: 20rpx;

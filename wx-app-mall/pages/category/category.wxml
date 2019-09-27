@@ -1,2 +1,36 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="container">
+  <!-- 左侧 -->
+  <scroll-view class="left" scroll-y="true" scroll-into-view="{{categoryToView}}">
+    <block wx:for="{{categories}}" wx:key="*this">
+      <view
+        class="item {{currentCategoryId===item.scrollId?'active':''}}"
+        id="{{item.scrollId}}"
+        data-id="{{item.scrollId}}"
+        bindtap="handleCategoryClick"
+      >
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 右侧 -->
+  <scroll-view class="right" scroll-y="true" scroll-into-view="{{goodsToView}}" bindscroll="handleScroll">
+    <block wx:for="{{goodsList}}" wx:key="*this">
+      <view class="item">
+        <view class="title" id="{{item.scrollId}}">
+          <text>{{item.name}}</text>
+        </view>
+        <block wx:for="{{item.goods}}" wx:for-item="good" wx:key="id">
+          <view class="content" data-id="{{good.id}}" bindtap="handleGoodDetail">
+            <image src="{{good.pic}}" mode='aspectFill' lazy-load="true"></image>
+            <view class="info">
+              <text class="name">{{good.name}}</text>
+              <text class="price">￥{{good.minPrice}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+
+</view>
