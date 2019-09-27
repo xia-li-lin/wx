@@ -1,10 +1,13 @@
-// 小程序开发api接口工具包，https://github.com/gooking/wxapi
+/**
+ * 小程序开发api接口工具包:
+ * https://github.com/gooking/apifm-wxapi 
+ * https://api.it120.cc/doc.html
+*/
 const CONFIG = require('./config.js')
 const API_BASE_URL = 'https://api.it120.cc';
 
 const request = (url, needSubDomain, method, data) => {
   let _url = API_BASE_URL + (needSubDomain ? '/' + CONFIG.subDomain : '') + url
-  console.log(_url);
   return new Promise((resolve, reject) => {
     wx.request({
       url: _url,

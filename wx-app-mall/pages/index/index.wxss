@@ -41,6 +41,10 @@
   width: 60rpx;
   height: 60rpx;
 }
+.categories .item .active{
+  color: #e64340;
+  border-bottom: 1px solid #e64340;
+}
 .banners{
   width: 100vw;
   position: relative;
@@ -53,7 +57,7 @@
   width: 100vw;
   height: 250rpx;
 }
-.goods-recommend{
+.goods{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -61,7 +65,7 @@
   padding: 24rpx;
   background: #f2f2f2;
 }
-.goods-recommend .item{
+.goods .item{
   width: 340rpx;
   background: #fff;
   overflow: hidden;
@@ -69,12 +73,12 @@
   margin-bottom: 24rpx;
   border-radius: 5px;
 }
-.goods-recommend .item image{
+.goods .item image{
   width: 340rpx;
   height: 340rpx;
   overflow: hidden;
 }
-.goods-recommend .item .title{
+.goods .item .title{
   width: 280rpx;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -83,15 +87,15 @@
   color: #000;
   margin-left: 24rpx;
 }
-.goods-recommend .item .price{
+.goods .item .price{
   padding: 24rpx;
   overflow: hidden;
 }
-.goods-recommend .item .price view:nth-of-type(1){
+.goods .item .price view:nth-of-type(1){
   float: left;
   color:#e64340;
 }
-.goods-recommend .item .price view:nth-of-type(2){
+.goods .item .price view:nth-of-type(2){
   float: right;
   text-decoration: line-through;
   color: #aaa;
@@ -145,4 +149,10 @@
 }
 .pingtuan .item .button{
   float: right;
+}
+.no-more-goods{
+  text-align: center;
+  font-size: 24rpx;
+  padding:48rpx; 
+  color: #999;
 }
