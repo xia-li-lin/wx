@@ -7,7 +7,13 @@
     "pages/user/user",
     "pages/notice/notice",
     "pages/good-detail/good-detail",
-    "pages/poster/poster"
+    "pages/poster/poster",
+    "pages/account-detail/account-detail",
+    "pages/integral/integral",
+    "pages/order-list/order-list",
+    "pages/check-in/check-in",
+    "pages/ship-address/ship-address",
+    "pages/coupon-center/coupon-center"
   ],
   "window": {
     "backgroundTextStyle": "light",

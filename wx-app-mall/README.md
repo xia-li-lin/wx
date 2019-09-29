@@ -1,0 +1,14 @@
+"pages/start/start",  // 初始页
+"pages/index/index",  // 首页
+"pages/category/category",  // 分类
+"pages/shop-cart/shop-cart",  // 购物车
+"pages/user/user",  // 我的
+"pages/notice/notice",  // 公告
+"pages/good-detail/good-detail",  // 商品详情
+"pages/poster/poster",  // 生成海报
+"pages/account-detail/account-detail",  // 资金明细
+"pages/integral/integral",  // 积分兑换
+"pages/order-list/order-list",  // 订单列表
+"pages/check-in/check-in",  // 每日签到
+"pages/ship-address/ship-address",  // 收货地址
+"pages/coupon-center/coupon-center",  // 领券中心

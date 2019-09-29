@@ -32,19 +32,19 @@ const request = (url, needSubDomain, method, data) => {
 /**
  * 小程序的promise没有finally方法，自己扩展下
  */
-Promise.prototype.finally = function (callback) {
+Promise.prototype.finally = function(callback) {
   var Promise = this.constructor;
   return this.then(
-    function (value) {
+    function(value) {
       Promise.resolve(callback()).then(
-        function () {
+        function() {
           return value;
         }
       );
     },
-    function (reason) {
+    function(reason) {
       Promise.resolve(callback()).then(
-        function () {
+        function() {
           return reason;
         }
       );
@@ -100,5 +100,23 @@ module.exports = {
   // 用户注册
   register: (data) => {
     return request('/user/wxapp/register/complex', true, 'post', data)
+  },
+  // 查看用户资产
+  getUserAmount: (token) => {
+    return request('/user/amount', true, 'get', {
+      token: token
+    })
+  },
+  // 小程序分享到微信群赠送积分
+  shareGroupGetScore: (referrer, encryptedData, iv) => {
+    return request('/score/share/wxa/group', true, 'post', {
+      referrer,
+      encryptedData,
+      iv
+    })
+  },
+  // 获取当前商户vip级别
+  getVipLevel: () => {
+    return request('/config/vipLevel', true, 'get')
   }
 }
