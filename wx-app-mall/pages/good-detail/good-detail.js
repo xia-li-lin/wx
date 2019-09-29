@@ -23,13 +23,15 @@ Page({
     selectSizePrice: 0,
     totalScoreToPay: 0,
     goodsDetail: {},
-    shareoff: false
+    shareoff: false,
+    shopNum: 0,
+    buyNum:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.data.goodId = options.id
 
   },
@@ -37,14 +39,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     this.getGoodDetail(this.data.goodId)
     this.getBargainSet(this.data.goodId)
   },
@@ -52,43 +54,43 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     const basicInfo = this.data.goodsDetail.basicInfo;
     let _data = {
       title: basicInfo && basicInfo.name,
       path: '/pages/good-detail/good-detail?id=' + basicInfo.id + '&inviter_id' + wx.getStorageSync('uid'),
-      success: function (res) {
+      success: function(res) {
         console.log(res)
       },
-      fail: function (err) {
+      fail: function(err) {
         console.error(err)
       }
     }
@@ -139,7 +141,7 @@ Page({
   },
 
   // 获取视频地址
-  getVideoUrl: function (videoId) {
+  getVideoUrl: function(videoId) {
     const _this = this;
     WXAPI.getVideoDetail(videoId).then((res) => {
       if (res.code == 0) {
@@ -151,19 +153,36 @@ Page({
   },
 
   // 轮播图焦点发生变化时
-  handleSwiperChange: function (e) {
+  handleSwiperChange: function(e) {
+
+  },
+
+  // 点击跳转到购物车页面
+  goToShopCart: function(e) {
+    wx.reLaunch({
+      url: '/pages/shop-cart/shop-cart'
+    })
+  },
+
+  // 加入购物车
+  addGoodToShopCart: function(e) {
+
+  },
+
+  // 立即购买
+  nowBuy: function(e) {
 
   },
 
   // 打开分享窗口
-  handleOpenShareWin: function () {
+  handleOpenShareWin: function() {
     this.setData({
       shareoff: true
     })
   },
 
   // 生成海报
-  handleGeneratePoster: function (e) {
+  handleGeneratePoster: function(e) {
     console.log(e)
     wx.navigateTo({
       url: '/pages/poster/poster?goodId=' + e.currentTarget.dataset.goodid,
@@ -171,7 +190,7 @@ Page({
   },
 
   // 取消分享
-  handleCloseShareMask: function () {
+  handleCloseShareMask: function() {
     this.setData({
       shareoff: false
     })

@@ -32,19 +32,19 @@ const request = (url, needSubDomain, method, data) => {
 /**
  * 小程序的promise没有finally方法，自己扩展下
  */
-Promise.prototype.finally = function(callback) {
+Promise.prototype.finally = function (callback) {
   var Promise = this.constructor;
   return this.then(
-    function(value) {
+    function (value) {
       Promise.resolve(callback()).then(
-        function() {
+        function () {
           return value;
         }
       );
     },
-    function(reason) {
+    function (reason) {
       Promise.resolve(callback()).then(
-        function() {
+        function () {
           return reason;
         }
       );
@@ -85,5 +85,20 @@ module.exports = {
   // 获取视频素材详情
   getVideoDetail: (data) => {
     return request('/media/video/detail', true, 'get', data)
+  },
+  // 检测登录token是否有效
+  checkLoginToken: (data) => {
+    return request('/user/check-token', true, 'get', data)
+  },
+  // 登录获取Token
+  login: (code) => {
+    return request('/user/wxapp/login', true, 'post', {
+      code: code,
+      type: 2
+    })
+  },
+  // 用户注册
+  register: (data) => {
+    return request('/user/wxapp/register/complex', true, 'post', data)
   }
 }

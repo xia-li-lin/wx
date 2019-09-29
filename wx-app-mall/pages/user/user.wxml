@@ -1,2 +1,6 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="container">
+  <view class="userInfo">
+    <image class="avatar"></image>
+  </view>
+</view>

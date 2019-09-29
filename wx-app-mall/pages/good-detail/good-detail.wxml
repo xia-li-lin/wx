@@ -54,6 +54,49 @@
       <contact-button type="default-dark" session-from="weapp" size="27"></contact-button>
       <view>客服</view>
     </view>
+    <view class="shop-cart" bindtap="goToShopCart">
+      <view class="num">({{shopNum}})</view>
+      <view>购物车</view>
+    </view>
+    <view class="add-shop-cart" bindtap="addGoodToShopCart">加入购物车</view>
+    <view class="now-buy" bindtap="nowBuy">立即购买</view>
+  </view>
+  <!-- 点击加入购物车，立即购买弹出内容层 -->
+  <view class="popup">
+    <view class="mask" bindtap="closePopupMask"></view>
+    <view class="content">
+      <view class="good-info">
+        <view class="image">
+          <image src="{{goodsDetail.basicInfo.pic}}"></image>
+        </view>
+        <view class="description">
+          <text class="title">{{goodsDetail.basicInfo.name}}</text>
+          <text class="price">￥{{selectSizePrice}}</text>
+        </view>
+        <view class="close-popup" bindtap="closePopupMask"></view>
+      </view>
+      <!-- 此块暂无数据，先不做 -->
+      <!-- <view class="size-lable-box">
+        <block wx:for="{{goodsDetail.properties}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+          <view class="size-key">{{property.name}}</view>
+          <view class="size-value">
+            <view class="size-item"></view>
+          </view>
+        </block>
+      </view> -->
+      <view class="buy-num">
+        <view class="label">购买数量</view>
+        <view class="num-box">
+          <view class="reduce">-</view>
+          <view class="button">
+            <input type="number" value="{{buyNum}}" disabled/>
+          </view>
+          <view class="add">+</view>
+        </view>
+      </view>
+    </view>
+    <view class="add-shop-cart">加入购物车</view>
+    <view class="join-buy">立即购买</view>
   </view>
   <!-- 点击分享按钮打开弹窗 -->
   <view class="share-mask" wx:if="{{shareoff}}">

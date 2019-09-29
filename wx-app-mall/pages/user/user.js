@@ -1,17 +1,22 @@
 // pages/user/user.js
+const AUTH = require('../../utils/auth')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    AUTH.register(this).then((res)=>{
+      console.log(res)
+    })
 
   },
 
