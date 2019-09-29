@@ -164,8 +164,11 @@ Page({
     this.getGoodsList(this.data.categoryActive, true)
   },
   // 点击跳转到商品详情
-  handleGoodDetailClick: function () {
-
+  handleGoodDetailClick: function (e) {
+    const id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/good-detail/good-detail?id='+id,
+    })
   },
   // 以下为搜索框事件
   showInput: function () {

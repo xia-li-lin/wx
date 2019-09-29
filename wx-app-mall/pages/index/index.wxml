@@ -115,7 +115,7 @@
     </block>
 
     <!-- 全民拼团 -->
-    <block wx:if="{{goodsPintuan.length>0 && categoryActive==0}}">
+    <!-- <block wx:if="{{goodsPintuan.length>0 && categoryActive==0}}">
       <view class="page_bd">   
         <view class="weui-loadmore weui-loadmore_line">
             <view class="weui-loadmore__tips weui-loadmore__tips_in-line">全民拼团</view>
@@ -126,6 +126,8 @@
           class="item"
           wx:for-items="{{goodsPintuan}}"
           wx:key="*this"
+          data-id="{{item.id}}" 
+          bindtap="handleGoodDetailClick"
         >
           <view class="image">
             <image src="{{item.pic}}" mode="aspectFill" lazy-load='{{true}}'></image>
@@ -144,7 +146,7 @@
           </view>
         </view>
       </view>
-    </block>
+    </block> -->
 
     <!-- 商品列表 -->
     <block>

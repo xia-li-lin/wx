@@ -2,7 +2,7 @@
  * 小程序开发api接口工具包:
  * https://github.com/gooking/apifm-wxapi 
  * https://api.it120.cc/doc.html
-*/
+ */
 const CONFIG = require('./config.js')
 const API_BASE_URL = 'https://api.it120.cc';
 
@@ -31,20 +31,20 @@ const request = (url, needSubDomain, method, data) => {
 
 /**
  * 小程序的promise没有finally方法，自己扩展下
-*/
-Promise.prototype.finally = function (callback) {
-  var Promise=this.constructor;
+ */
+Promise.prototype.finally = function(callback) {
+  var Promise = this.constructor;
   return this.then(
-    function(value){
+    function(value) {
       Promise.resolve(callback()).then(
-        function(){
+        function() {
           return value;
         }
       );
     },
-    function (reason) {
+    function(reason) {
       Promise.resolve(callback()).then(
-        function () {
+        function() {
           return reason;
         }
       );
@@ -59,20 +59,31 @@ module.exports = {
     return request('/banner/list', true, 'get', data)
   },
   // 存储小程序模板消息的formid数据
-  addTempleMsgFormid:(data)=>{
-    return request('/template-msg/wxa/formId',true,'post',data)
+  addTempleMsgFormid: (data) => {
+    return request('/template-msg/wxa/formId', true, 'post', data)
   },
   // 获取公告列表
-  getNotice:(data)=>{
-    return request('/notice/list',true,'post',data)
+  getNotice: (data) => {
+    return request('/notice/list', true, 'post', data)
   },
   // 商城模块---商品类别
-  getGoodsCategory:(data)=>{
-    return request('/shop/goods/category/all',true,'get',data)
+  getGoodsCategory: (data) => {
+    return request('/shop/goods/category/all', true, 'get', data)
   },
   // 获取商品列表
-  getGoodsList:(data)=>{
-    return request('/shop/goods/list',true,'post',data)
+  getGoodsList: (data) => {
+    return request('/shop/goods/list', true, 'post', data)
+  },
+  // 获取商品详情
+  getGoodDetail: (data) => {
+    return request('/shop/goods/detail', true, 'get', data)
+  },
+  // 获取砍价设置
+  getBargainSet: (data) => {
+    return request('/shop/goods/kanjia/set', true, 'get', data)
+  },
+  // 获取视频素材详情
+  getVideoDetail: (data) => {
+    return request('/media/video/detail', true, 'get', data)
   }
 }
-

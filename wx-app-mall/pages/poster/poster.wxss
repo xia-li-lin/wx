@@ -1,0 +1,8 @@
+/* pages/poster/poster.wxss */
+.container canvas{
+  width: 100vw;
+}
+.container button{
+  width: 700rpx;
+  margin: 30rpx 0;
+}

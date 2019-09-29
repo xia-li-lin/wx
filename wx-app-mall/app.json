@@ -5,7 +5,9 @@
     "pages/category/category",
     "pages/shop-cart/shop-cart",
     "pages/user/user",
-    "pages/notice/notice"
+    "pages/notice/notice",
+    "pages/good-detail/good-detail",
+    "pages/poster/poster"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,5 @@
+<!--pages/poster/poster.wxml-->
+<view class="container">
+  <canvas style="{{canvasStyle}}" canvas-id="myCanvas"></canvas>
+  <button class="button" type="primary" bindtap='saveToMobile'>保存到手机相册</button>
+</view>
